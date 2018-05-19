@@ -1,0 +1,14 @@
+.env*
+*-compose*.yml
+*.md
+Dockerfile*
+.dockerignore
+*.swp
+.git
+.gitignore
+.eslintrc
+.editorconfig
+coverage
+e2e
+Makefile
+*.example
