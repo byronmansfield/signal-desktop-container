@@ -2,6 +2,17 @@
 
 This is a project containerizes Signal Desktop Messenger. Because what's better than a secure messenger? A portable ephemeral secure messenger that leaves no trace behind.
 
+## Table of content
+
+- [Requirements](#requirements)
+- [Get the image](#get-the-image)
+  * [Build yourself](#build-yourself)
+  * [Pull from dockerhub](#pull-from-dockerhub)
+- [Run container](#run-container)
+  * [Make](#make)
+  * [Manually](#manually)
+- [Extra](#extra)
+
 ## Requirements
 
  - X Server
@@ -62,4 +73,12 @@ docker run -it --volume="$HOME/Downloads:/root/Downloads:rw" --volume="/tmp/.X11
 ```
 
 And it should automagically open up a new instance of Signal Desktop asking you to link the device. Link and enjoy secure private messaging.
+
+## Extra
+
+Alias for greater convenience
+
+```bash
+alias signalctnr='IP=$(ifconfig en0 | grep '"'"'inet '"'"' | awk '"'$1==inet "'{print $2}'"'"'); export DISPLAY=$IP; xhost +; xhost + $IP; docker run -it --volume="$HOME/Downloads:/root/Downloads:rw" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" -e DISPLAY=$IP:0 --name signal bmansfield/signal-desktop:latest'
+```
 
