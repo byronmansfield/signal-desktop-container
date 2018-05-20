@@ -2,6 +2,10 @@
 
 This is a project containerizes Signal Desktop Messenger. Because what's better than a secure messenger? A portable ephemeral secure messenger that leaves no trace behind.
 
+![Imgur](https://i.imgur.com/h3uLLJq.jpg?1)
+
+Signal running in a container on OS X
+
 ## Table of content
 
 - [Requirements](#requirements)
