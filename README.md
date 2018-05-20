@@ -58,7 +58,7 @@ IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 xhost +
 xhost + $IP
 export DISPLAY=$IP
-docker run -it --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" -e DISPLAY=$IP:0 --name signal bmansfield/signal-desktop:latest
+docker run -it --volume="$HOME/Downloads:/root/Downloads:rw" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" -e DISPLAY=$IP:0 --name signal bmansfield/signal-desktop:latest
 ```
 
 And it should automagically open up a new instance of Signal Desktop asking you to link the device. Link and enjoy secure private messaging.

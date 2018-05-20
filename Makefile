@@ -29,6 +29,7 @@ run_ctnr:
 	docker run \
 		-it \
 		--volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+		--volume="$HOME/Downloads:/root/Downloads:rw" \
 		-e DISPLAY=$IP:0 \
 		--name signal \
 		$(DOCKER_IMG)
